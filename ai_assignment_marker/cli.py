@@ -8,9 +8,10 @@ def cli():
                     epilog='Text at the bottom of help')
   
   parser.add_argument('path', help='Path to the directory containing the submissions')
+  parser.add_argument('rubric', help="Path to the yaml file that follows the rubric format.")
   args = parser.parse_args()
 
-  AssignmentsRunner.AssignmentsRunner(args.path).run()
+  AssignmentsRunner.AssignmentsRunner(args.path, args.rubric).run()
   
 if __name__ == "__main__":
   cli()
