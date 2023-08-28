@@ -9,6 +9,7 @@ packages = [{include = "ai_assignment_marker"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 pytest = "^7.4.0"
+argparse = "^1.4.0"
 
 
 [build-system]
