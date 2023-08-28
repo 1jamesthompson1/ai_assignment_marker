@@ -1,4 +1,5 @@
 import os
+from ai_assignment_marker.AssignmentMarker import AssignmentMarker
 
 class AssignmentsRunner:
     def __init__(self, assignments_path):
@@ -8,10 +9,10 @@ class AssignmentsRunner:
         for assignment in self.get_assignments():
             print(f"Running assignment {assignment}...")
 
-            # Call assginment marker and pass the path to the file.
+            AssignmentMarker(assignment).process()
 
             print(f"Completed assignment {assignment}.")
 
     def get_assignments(self):
         
-        return os.listdir(self.assignments_path)
+        return [os.path.join(self.assignments_path, file) for file in os.listdir(self.assignments_path)]
